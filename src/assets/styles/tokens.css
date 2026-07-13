@@ -1,0 +1,38 @@
+:root {
+  /* color */
+  --colors-black: hsl(0 0 0%);
+  --colors-white: hsl(0 0 100%);
+  --colors-gray-200: hsl(0 0 85%);
+  --colors-gray-400: hsl(0 0 57%);
+  --colors-gray-500: hsl(0 0 48%);
+  --colors-gray-950: hsl(0 0 18%);
+
+  --colors-green-400: hsl(176 50% 47%);
+  --colors-green-50: hsl(180 26% 96%);
+  --colors-green-700: hsl(176 72% 28%);
+
+  --text-color-heading: var(--colors-black);
+  --text-color-default: var(--colors-gray-500);
+
+  --primary: var(--colors-green-400);
+  --primary-active: var(--colors-green-700);
+  /* number */
+  --spacing-0: 0rem;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-600: 3rem;
+  --spacing-700: 3.5rem;
+
+  /* typography */
+
+  --fs-heading-xl: 2rem;
+  --fs-heading-l: clamp(1.25rem, 0.417rem + 2.778vw, 1.75rem);
+  --fs-heading-m: clamp(1.125rem, 0.5rem + 2.083vw, 1.5rem);
+  --fs-heading-s: clamp(0.875rem, 0.458rem + 1.389vw, 1.125rem);
+
+  --fs-body-default: clamp(0.875rem, 0.667rem + 0.694vw, 1rem);
+  --fs-body-small: clamp(0.875rem, 0.771rem + 0.347vw, 0.938rem);
+  --fs-interactive: 1rem;
+}
