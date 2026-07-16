@@ -2,6 +2,11 @@ body {
   background-color: var(--bg-color-app);
 }
 
+.section {
+  display: grid;
+  row-gap: clamp(1rem, 0.118rem + 2.941vw, 2rem); /* default stack */
+}
+
 .card {
   padding-inline: clamp(1.5rem, 0.75rem + 2.5vw, 3rem);
   padding-block: clamp(2.25rem, 1.588rem + 2.206vw, 3rem);
@@ -10,6 +15,12 @@ body {
   background-color: var(--bg-color-default);
 }
 
+/* stack/flow variations */
+
 .card + .card {
   margin-block-start: 1.5rem;
+}
+
+.card > .section + .section {
+  margin-block-start: 2rem;
 }
