@@ -1,0 +1,15 @@
+body {
+  background-color: var(--bg-color-app);
+}
+
+.card {
+  padding-inline: clamp(1.5rem, 0.75rem + 2.5vw, 3rem);
+  padding-block: clamp(2.25rem, 1.588rem + 2.206vw, 3rem);
+  border: 1px solid var(--border-color-default);
+  border-radius: 0.5rem;
+  background-color: var(--bg-color-default);
+}
+
+.card + .card {
+  margin-block-start: 1.5rem;
+}

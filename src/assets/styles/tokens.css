@@ -2,6 +2,7 @@
   /* color */
   --colors-black: hsl(0 0 0%);
   --colors-white: hsl(0 0 100%);
+  --colors-gray-50: hsl(0 0 98%);
   --colors-gray-200: hsl(0 0 85%);
   --colors-gray-400: hsl(0 0 57%);
   --colors-gray-500: hsl(0 0 48%);
@@ -16,6 +17,12 @@
 
   --primary: var(--colors-green-400);
   --primary-active: var(--colors-green-700);
+
+  --border-color-default: var(--colors-gray-200);
+
+  --bg-color-app: var(--colors-gray-50);
+  --bg-color-default: var(--colors-white);
+
   /* number */
   --spacing-0: 0rem;
   --spacing-100: 0.5rem;
