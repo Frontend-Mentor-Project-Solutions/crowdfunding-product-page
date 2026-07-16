@@ -2,4 +2,30 @@
 
 body {
   font-family: "Commissioner", sans-serif;
+  font-size: var(--fs-body-default);
+  color: var(--text-color-default);
+}
+
+h1,
+h2,
+.h3,
+.text-xl {
+  font-weight: 700;
+  color: var(--text-color-heading);
+}
+
+h1 {
+  font-size: var(--fs-heading-l);
+}
+
+h2 {
+  font-size: var(--fs-heading-m);
+}
+
+.h3 {
+  font-size: var(--fs-heading-s);
+}
+
+.text-xl {
+  font-size: var(--fs-heading-xl);
 }

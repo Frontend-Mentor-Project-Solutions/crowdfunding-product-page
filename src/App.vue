@@ -1,19 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from "./components/Header.vue"
+</script>
 
 <template>
-  <header>
-    <div class="">
-      <img src="./assets/icons/logo.svg" alt="Logo" />
-
-      <nav aria-label="Main navigation">
-        <ul role="list">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Discover</a></li>
-          <li><a href="#">Get Started</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <Header />
 
   <main>
     <section>
@@ -49,9 +39,7 @@
     </section>
 
     <section>
-      <ul role="list">
-        
-      </ul>
+      <ul role="list"></ul>
     </section>
   </main>
 </template>
