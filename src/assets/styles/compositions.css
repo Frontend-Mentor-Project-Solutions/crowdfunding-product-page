@@ -1,0 +1,7 @@
+@import url("https://cdn.jsdelivr.net/gh/Frontend-Mentor-Project-Solutions/fm-primitives@v1.0.0/packages/layouts/breakout-grid.css");
+
+.breakout-grid {
+  --content-width: 730px;
+  --breakout-width: 1110px;
+  --padding-inline: clamp(1.5rem, -1rem + 8.333vw, 3rem);
+}

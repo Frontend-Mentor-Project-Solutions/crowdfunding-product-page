@@ -3,8 +3,8 @@ import AppLogo from "./icons/AppLogo.vue"
 </script>
 
 <template>
-  <header>
-    <div class="">
+  <header class="full-width">
+    <div class="breakout">
       <AppLogo />
 
       <nav aria-label="Main navigation">
@@ -21,6 +21,11 @@ import AppLogo from "./icons/AppLogo.vue"
 <style scoped>
 header {
   background-image: url("../assets/images/image-hero-desktop.jpg");
+}
+
+header > * {
+  display: flex;
+  justify-content: space-between;
 }
 
 a {
