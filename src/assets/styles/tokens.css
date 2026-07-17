@@ -15,8 +15,8 @@
   --text-color-heading: var(--colors-black);
   --text-color-default: var(--colors-gray-500);
 
-  --primary: var(--colors-green-400);
-  --primary-active: var(--colors-green-700);
+  --color-primary: var(--colors-green-400);
+  --color-primary-active: var(--colors-green-700);
 
   --border-color-default: var(--colors-gray-200);
 

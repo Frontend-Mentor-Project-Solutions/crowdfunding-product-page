@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Card from "./components/Card.vue"
 import Header from "./components/Header.vue"
 </script>
 
@@ -43,7 +44,17 @@ import Header from "./components/Header.vue"
             your computer to allow notepads, pens, and USB sticks to be stored under the stand.
           </p>
 
-          <ul role="list"></ul>
+          <ul role="list">
+            <li class="card-item">
+              <Card />
+            </li>
+            <li class="card-item">
+              <Card />
+            </li>
+            <li class="card-item">
+              <Card />
+            </li>
+          </ul>
         </section>
       </div>
     </main>
