@@ -29,3 +29,43 @@ body {
 .card > .section + .section {
   margin-block-start: 2.5rem;
 }
+
+button {
+  --button-text: var(--colors-white);
+  --button-bg: var(--color-primary);
+  --button-hover: var(--color-primary-active);
+
+  font-size: var(--fs-interactive);
+  font-weight: 700;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  border-radius: 2rem;
+  transition-property: background, transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    background-color: var(--button-hover);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--button-text);
+    outline-offset: -4px;
+  }
+
+  &[data-variant="secondary"] {
+    --button-text: var(--colors-gray-500);
+    --button-bg: var(--colors-gray-200);
+    --button-hover: var(--colors-gray-200);
+  }
+
+  &[data-variant="disabled"] {
+    --button-bg: var(--colors-gray-400);
+  }
+}

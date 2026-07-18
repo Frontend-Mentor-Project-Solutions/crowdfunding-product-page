@@ -1,16 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { PropType } from "vue"
+
+const props = defineProps({
+  title: { type: String, required: true },
+  minPledge: Number,
+  description: { type: String, required: true },
+  stock: Number,
+  interactionType: {
+    type: String as PropType<"button" | "radio">,
+    default: "button",
+  },
+})
+</script>
 
 <template>
   <div class="card reward">
-    <span class="h3">Blah blah stand</span>
-    <span class="pledge">Pledge $0 or more</span>
-    <p class="description">
-      You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional
-      campaign, and you’ll be added to a special Backer member list.
-    </p>
+    <span class="h3">{{ title }}</span>
+    <span class="pledge">Pledge ${{ minPledge }} or more</span>
+    <p class="description">{{ description }}</p>
 
-    <span class="stock"><span class="text-xl">100</span> left</span>
-    <button>Select Reward</button>
+    <span class="stock">
+      <span class="text-xl">{{ stock }}</span> left
+    </span>
+    <button v-if="interactionType === 'button'" class="modal-toggle">Select Reward</button>
   </div>
 </template>
 
@@ -25,9 +37,12 @@
   grid-column: 1 / -1;
 }
 
-.pledge {
+.pledge,
+.modal-toggle {
   justify-self: end;
 }
+
+/* styles */
 
 .pledge {
   color: var(--color-primary);

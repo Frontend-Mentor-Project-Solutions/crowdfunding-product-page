@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Card from "./components/Card.vue"
 import Header from "./components/Header.vue"
+import constants from "@/constants.json"
 </script>
 
 <template>
@@ -11,8 +12,8 @@ import Header from "./components/Header.vue"
       <section class="section project-info card">
         <h1>Mastercraft Bamboo Monitor Riser</h1>
         <p>A beautifully handcrafted monitor stand to reduce neck and eye strain.</p>
-        <button>Back this project</button>
-        <button>Bookmark</button>
+        <button data-variant="primary">Back this project</button>
+        <button data-variant="secondary">Bookmark</button>
       </section>
 
       <section class="section funding-info card">
@@ -45,14 +46,14 @@ import Header from "./components/Header.vue"
           </p>
 
           <ul role="list">
-            <li class="card-item">
-              <Card />
-            </li>
-            <li class="card-item">
-              <Card />
-            </li>
-            <li class="card-item">
-              <Card />
+            <li class="card-item" v-for="reward in constants" :key="reward.title">
+              <Card
+                :title="reward.title"
+                :minPledge="reward.minPledge"
+                :description="reward.description"
+                :stock="100"
+                interactionType="button"
+              />
             </li>
           </ul>
         </section>

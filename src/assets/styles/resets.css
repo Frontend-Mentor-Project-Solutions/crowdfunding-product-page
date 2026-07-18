@@ -1,1 +1,19 @@
 @import url("https://cdn.jsdelivr.net/gh/Frontend-Mentor-Project-Solutions/fm-primitives@v1.0.0/packages/resets/base-reset.css");
+
+button,
+a.button {
+  width: fit-content;
+  height: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: inherit;
+  color: currentColor;
+  background-color: transparent;
+  border: none;
+}
+
+a.button {
+  text-decoration: none;
+}
