@@ -1,6 +1,13 @@
 import { reactive, computed } from "vue"
 import constants from "@/constants.json"
 
+const currencyFormatter = new Intl.NumberFormat(undefined, {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+})
+const numberFormatter = new Intl.NumberFormat(undefined)
+
 export const store = reactive({
   rewardStocks: [
     { id: 1, stock: 101 },
@@ -18,4 +25,11 @@ export const rewards = computed(() => {
       stock: store.rewardStocks.find((item) => item.id === reward.id)?.stock ?? 0,
     }
   })
+})
+
+export const fundingStats = computed(() => {
+  return {
+    backers: numberFormatter.format(store.totalBackers),
+    pledged: currencyFormatter.format(store.totalPledged),
+  }
 })

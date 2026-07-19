@@ -5,3 +5,14 @@
   --breakout-width: 1110px;
   --padding-inline: clamp(1.5rem, -1rem + 8.333vw, 3rem);
 }
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+
+  > * {
+    flex-grow: 1;
+    flex-basis: calc((35rem - 100%) * 999);
+  }
+}

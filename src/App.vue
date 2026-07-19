@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Card from "./components/Card.vue"
 import Header from "./components/Header.vue"
+import FundingInfo from "./components/FundingInfo.vue"
 import { rewards } from "@/store"
 </script>
 
@@ -16,15 +17,7 @@ import { rewards } from "@/store"
         <button data-variant="secondary">Bookmark</button>
       </section>
 
-      <section class="section funding-info card">
-        <ul role="list" class="funding-stats">
-          <li><span>$89,914</span> <span>of $100,000 backed</span></li>
-          <li><span>5,007</span> <span>total backers</span></li>
-          <li><span>56</span> <span>days left</span></li>
-        </ul>
-
-        <progress value="89914" max="100000"></progress>
-      </section>
+      <FundingInfo />
 
       <div class="card">
         <section class="section">
