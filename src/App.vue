@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Card from "./components/Card.vue"
 import Header from "./components/Header.vue"
-import constants from "@/constants.json"
+import { rewards } from "@/store"
 </script>
 
 <template>
@@ -46,12 +46,12 @@ import constants from "@/constants.json"
           </p>
 
           <ul role="list">
-            <li class="card-item" v-for="reward in constants" :key="reward.title">
+            <li class="card-item" v-for="reward in rewards" :key="reward.id">
               <Card
                 :title="reward.title"
                 :minPledge="reward.minPledge"
                 :description="reward.description"
-                :stock="100"
+                :stock="reward.stock"
                 interactionType="button"
               />
             </li>
