@@ -2,6 +2,11 @@ body {
   background-color: var(--bg-color-app);
 }
 
+main {
+  margin-block-start: -5rem;
+  z-index: 1;
+}
+
 .section {
   display: grid;
   row-gap: clamp(1rem, 0.118rem + 2.941vw, 2rem); /* default stack */
