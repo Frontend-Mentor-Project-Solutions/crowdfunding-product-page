@@ -19,7 +19,7 @@ import { store, fundingStats } from "@/store"
       </li>
     </ul>
 
-    <progress :value="store.totalPledged" max="100000"></progress>
+    <div class="progress-bar" :style="{ '--progress': store.totalPledged / 1000 + '%' }"></div>
   </section>
 </template>
 
@@ -38,6 +38,22 @@ import { store, fundingStats } from "@/store"
     height: 2px;
     background-color: var(--border-color-default);
     margin-block-start: 1.5rem;
+  }
+}
+
+.progress-bar {
+  background-color: var(--colors-gray-200);
+  border-radius: 100vw;
+  height: 12px;
+  position: relative;
+
+  &::before {
+    content: "";
+    height: inherit;
+    border-radius: inherit;
+    background-color: var(--color-primary);
+    width: var(--progress);
+    position: absolute;
   }
 }
 

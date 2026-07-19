@@ -11,35 +11,45 @@ const props = defineProps({
     default: "button",
   },
 })
-</script>
 
+function hasStock(stock: number | undefined): boolean {
+  if (stock === 0) {
+    return false
+  }
+
+  return true
+}
+</script>
+<!-- TODO: disable for screenreaders as well -->
 <template>
-  <div class="card reward">
-    <span class="h3">{{ title }}</span>
-    <span class="pledge">Pledge ${{ minPledge }} or more</span>
+  <div class="card reward" :class="{ disabled: !hasStock(stock) }">
+    <div class="header">
+      <span class="h3">{{ title }}</span>
+      <span class="pledge">Pledge ${{ minPledge }} or more</span>
+    </div>
+
     <p class="description">{{ description }}</p>
 
     <span class="stock">
       <span class="text-xl">{{ stock }}</span> left
     </span>
-    <button v-if="interactionType === 'button'" class="modal-toggle">Select Reward</button>
+
+    <button v-if="interactionType === 'button'" class="modal-toggle" :disabled="!hasStock(stock)">
+      Select Reward
+    </button>
   </div>
 </template>
 
 <style>
 .reward {
   display: grid;
-  row-gap: 1.5rem;
-  grid-template-columns: 1fr 1fr;
+  row-gap: 1.25rem;
 }
 
-.description {
-  grid-column: 1 / -1;
-}
-
-.pledge,
-.modal-toggle {
-  justify-self: end;
+.header {
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: 0.5rem;
 }
 
 /* styles */
@@ -54,5 +64,10 @@ const props = defineProps({
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 </style>

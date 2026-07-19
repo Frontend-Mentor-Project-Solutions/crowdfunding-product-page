@@ -30,6 +30,26 @@ body {
   margin-block-start: 2.5rem;
 }
 
+.rewards-list {
+  container-type: inline-size;
+
+  @container (inline-size > 30rem) {
+    .reward {
+      grid-template-columns: auto auto;
+    }
+
+    .header,
+    .description {
+      grid-column: 1 / -1;
+    }
+
+    .pledge,
+    .modal-toggle {
+      justify-self: end;
+    }
+  }
+}
+
 button {
   --button-text: var(--colors-white);
   --button-bg: var(--color-primary);
@@ -65,7 +85,7 @@ button {
     --button-hover: var(--colors-gray-200);
   }
 
-  &[data-variant="disabled"] {
+  &[disabled] {
     --button-bg: var(--colors-gray-400);
   }
 }

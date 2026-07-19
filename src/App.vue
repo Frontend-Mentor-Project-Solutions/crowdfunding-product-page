@@ -38,7 +38,7 @@ import { rewards } from "@/store"
             your computer to allow notepads, pens, and USB sticks to be stored under the stand.
           </p>
 
-          <ul role="list">
+          <ul role="list" class="rewards-list">
             <li class="card-item" v-for="reward in rewards" :key="reward.id">
               <Card
                 :title="reward.title"
