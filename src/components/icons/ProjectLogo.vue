@@ -1,5 +1,11 @@
 <template>
-  <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    width="56"
+    height="56"
+    xmlns="http://www.w3.org/2000/svg"
+    class="project-logo"
+    aria-hidden="true"
+  >
     <g fill="none" fill-rule="evenodd">
       <circle fill="#000" cx="28" cy="28" r="28" />
       <g fill-rule="nonzero">

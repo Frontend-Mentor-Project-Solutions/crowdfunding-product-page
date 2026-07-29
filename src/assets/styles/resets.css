@@ -17,3 +17,10 @@ a.button {
 a.button {
   text-decoration: none;
 }
+
+button,
+a {
+  transition-property: background, color, transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}

@@ -45,5 +45,15 @@ a {
   color: var(--colors-white);
   text-decoration: none;
   font-size: var(--fs-interactive);
+  font-weight: 500;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
 }
 </style>

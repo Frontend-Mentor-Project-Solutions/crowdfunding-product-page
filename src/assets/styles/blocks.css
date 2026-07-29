@@ -5,11 +5,38 @@ body {
 main {
   margin-block-start: -5rem;
   z-index: 1;
+  padding-block-end: clamp(4.75rem, -0.25rem + 16.667vw, 7.75rem);
 }
 
 .section {
   display: grid;
   row-gap: clamp(1rem, 0.118rem + 2.941vw, 2rem); /* default stack */
+}
+
+.project-info {
+  text-align: center;
+  grid-template-columns: auto auto;
+  anchor-name: --project-card;
+
+  h1,
+  p {
+    grid-column: 1 / -1;
+  }
+
+  button:last-of-type {
+    justify-self: end;
+  }
+
+  h1 {
+    margin-block-start: 1rem;
+  }
+}
+
+.project-logo {
+  position: absolute;
+  position-anchor: --project-card;
+  inset-block-end: calc(anchor(top) - 28px);
+  position-area: center;
 }
 
 .card {
@@ -67,9 +94,6 @@ button {
   padding-block: 1rem;
   padding-inline: 2rem;
   border-radius: 2rem;
-  transition-property: background, transform;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
 
   &:hover {
     background-color: var(--button-hover);

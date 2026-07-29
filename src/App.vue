@@ -3,6 +3,7 @@ import Card from "./components/Card.vue"
 import Header from "./components/Header.vue"
 import FundingInfo from "./components/FundingInfo.vue"
 import { rewards } from "@/store"
+import ProjectLogo from "./components/icons/ProjectLogo.vue"
 </script>
 
 <template>
@@ -15,6 +16,8 @@ import { rewards } from "@/store"
         <p>A beautifully handcrafted monitor stand to reduce neck and eye strain.</p>
         <button data-variant="primary">Back this project</button>
         <button data-variant="secondary">Bookmark</button>
+
+        <ProjectLogo />
       </section>
 
       <FundingInfo />
