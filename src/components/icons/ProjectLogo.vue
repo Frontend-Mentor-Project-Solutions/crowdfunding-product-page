@@ -21,3 +21,12 @@
     </g>
   </svg>
 </template>
+
+<style>
+.project-logo {
+  position: absolute;
+  position-anchor: --project-card;
+  inset-block-end: calc(anchor(top) - 28px);
+  position-area: center;
+}
+</style>

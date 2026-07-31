@@ -34,7 +34,13 @@ function hasStock(stock: number | undefined): boolean {
       <span class="text-xl">{{ stock }}</span> left
     </span>
 
-    <button v-if="interactionType === 'button'" class="modal-toggle" :disabled="!hasStock(stock)">
+    <button
+      v-if="interactionType === 'button'"
+      class="modal-toggle"
+      :disabled="!hasStock(stock)"
+      command="show-modal"
+      commandfor="rewards-modal"
+    >
       Select Reward
     </button>
   </div>

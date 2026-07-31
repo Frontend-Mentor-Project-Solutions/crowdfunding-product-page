@@ -4,6 +4,7 @@ import Header from "./components/Header.vue"
 import FundingInfo from "./components/FundingInfo.vue"
 import { rewards } from "@/store"
 import ProjectLogo from "./components/icons/ProjectLogo.vue"
+import CloseIcon from "./components/icons/CloseIcon.vue"
 </script>
 
 <template>
@@ -55,7 +56,34 @@ import ProjectLogo from "./components/icons/ProjectLogo.vue"
         </section>
       </div>
     </main>
+
+    <dialog id="rewards-modal" class="modal card">
+      <div class="section">
+        <h2>Back this project</h2>
+
+        <button
+          command="close"
+          commandfor="rewards-modal"
+          data-variant="transparent"
+          class="modal-close"
+        >
+          <CloseIcon />
+        </button>
+
+        <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
+
+        <ul role="list" class="rewards-list">
+          <li class="card-item" v-for="reward in rewards" :key="reward.id">
+            <Card
+              :title="reward.title"
+              :minPledge="reward.minPledge"
+              :description="reward.description"
+              :stock="reward.stock"
+              interactionType="radio"
+            />
+          </li>
+        </ul>
+      </div>
+    </dialog>
   </div>
 </template>
-
-<style scoped></style>
