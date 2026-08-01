@@ -15,7 +15,9 @@ import CloseIcon from "./components/icons/CloseIcon.vue"
       <section class="section project-info card">
         <h1>Mastercraft Bamboo Monitor Riser</h1>
         <p>A beautifully handcrafted monitor stand to reduce neck and eye strain.</p>
-        <button data-variant="primary">Back this project</button>
+        <button command="show-modal" commandfor="rewards-modal" data-variant="primary">
+          Back this project
+        </button>
         <button data-variant="secondary">Bookmark</button>
 
         <ProjectLogo />
@@ -72,17 +74,24 @@ import CloseIcon from "./components/icons/CloseIcon.vue"
 
         <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
 
-        <ul role="list" class="rewards-list">
-          <li class="card-item" v-for="reward in rewards" :key="reward.id">
-            <Card
-              :title="reward.title"
-              :minPledge="reward.minPledge"
-              :description="reward.description"
-              :stock="reward.stock"
-              interactionType="radio"
-            />
-          </li>
-        </ul>
+        <fieldset role="list" class="rewards-list">
+          <legend hidden>choose a reward</legend>
+
+          <Card
+            title="Pledge with no reward"
+            description="Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email."
+            interactionType="radio"
+          />
+          <Card
+            v-for="reward in rewards"
+            :key="reward.id"
+            :title="reward.title"
+            :minPledge="reward.minPledge"
+            :description="reward.description"
+            :stock="reward.stock"
+            interactionType="radio"
+          />
+        </fieldset>
       </div>
     </dialog>
   </div>

@@ -57,22 +57,7 @@ main {
 
 .rewards-list {
   container-type: inline-size;
-
-  @container (inline-size > 30rem) {
-    .reward {
-      grid-template-columns: auto auto;
-    }
-
-    .header,
-    .description {
-      grid-column: 1 / -1;
-    }
-
-    .pledge,
-    .modal-toggle {
-      justify-self: end;
-    }
-  }
+  container-name: reward;
 }
 
 .modal {
