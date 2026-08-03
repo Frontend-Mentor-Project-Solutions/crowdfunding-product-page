@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import { ref } from "vue"
+
 import Card from "./components/Card.vue"
 import Header from "./components/Header.vue"
 import FundingInfo from "./components/FundingInfo.vue"
 import { rewards } from "@/store"
 import ProjectLogo from "./components/icons/ProjectLogo.vue"
 import CloseIcon from "./components/icons/CloseIcon.vue"
+import BookmarkIcon from "./components/icons/BookmarkIcon.vue"
+
+const isBookmarked = ref(false)
 </script>
 
 <template>
@@ -18,7 +23,12 @@ import CloseIcon from "./components/icons/CloseIcon.vue"
         <button command="show-modal" commandfor="rewards-modal" data-variant="primary">
           Back this project
         </button>
-        <button data-variant="secondary">Bookmark</button>
+
+        <label class="button checkbox-button" data-variant="secondary">
+          <input type="checkbox" v-model="isBookmarked" />
+          <BookmarkIcon />
+          <span>{{ isBookmarked ? "Bookmarked" : "Bookmark" }}</span>
+        </label>
 
         <ProjectLogo />
       </section>

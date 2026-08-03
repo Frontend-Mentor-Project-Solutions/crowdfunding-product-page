@@ -15,20 +15,42 @@ main {
 
 .project-info {
   text-align: center;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr auto;
+  column-gap: 0.5rem;
   anchor-name: --project-card;
+  container-type: inline-size;
+  container-name: project-info;
 
   h1,
   p {
     grid-column: 1 / -1;
   }
 
-  button:last-of-type {
+  .button:last-of-type {
     justify-self: end;
   }
 
   h1 {
     margin-block-start: 1rem;
+  }
+
+  @container project-info (inline-size < 25rem) {
+    button {
+      width: 100%;
+    }
+
+    .checkbox-button {
+      padding-inline-end: initial;
+
+      span {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        position: absolute;
+        white-space: nowrap;
+      }
+    }
   }
 }
 
@@ -75,16 +97,18 @@ main {
   inset-inline-end: 1.5rem;
 }
 
-button {
+button,
+.button {
   --button-text: var(--colors-white);
   --button-bg: var(--color-primary);
   --button-hover: var(--color-primary-active);
+  --button-focus: var(--button-text);
 
   font-size: var(--fs-interactive);
   font-weight: 700;
   background-color: var(--button-bg);
   color: var(--button-text);
-  padding-block: 1rem;
+  padding-block: 1.125rem;
   padding-inline: 2rem;
   border-radius: 2rem;
 
@@ -97,7 +121,7 @@ button {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--button-text);
+    outline: 2px solid var(--button-focus);
     outline-offset: -5px;
   }
 
@@ -123,4 +147,40 @@ button {
       outline-offset: initial;
     }
   }
+}
+
+.checkbox-button {
+  position: relative;
+  padding-block: initial;
+  padding-inline-start: initial;
+  justify-content: space-between;
+  gap: 1rem;
+
+  &:has(input[type="checkbox"]:focus-visible) {
+    outline: 2px solid var(--button-focus);
+
+    &:has(input[type="checkbox"]:checked) {
+      --button-focus: var(--colors-black);
+    }
+  }
+
+  &:has(input[type="checkbox"]:checked) {
+    --button-text: var(--color-primary-active);
+    --button-bg: var(--colors-green-50);
+    --button-hover: var(--button-bg);
+
+    .bookmark-icon circle {
+      fill: var(--button-text);
+    }
+    .bookmark-icon path {
+      fill: var(--button-bg);
+    }
+  }
+}
+
+.checkbox-button input[type="checkbox"] {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  opacity: 0;
 }

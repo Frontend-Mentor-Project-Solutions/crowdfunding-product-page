@@ -1,6 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/Frontend-Mentor-Project-Solutions/fm-primitives@v1.0.0/packages/resets/base-reset.css");
 
 button,
+.button,
 a.button {
   width: fit-content;
   height: fit-content;
@@ -19,8 +20,12 @@ a.button {
 }
 
 button,
-a {
-  transition-property: background, color, transform;
+.button,
+a,
+svg,
+circle,
+path {
+  transition-property: background, color, transform, fill;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out;
 }
